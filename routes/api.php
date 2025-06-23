@@ -14,8 +14,9 @@ use App\Http\Controllers\EntryController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::get('/entries/stats', [EntryController::class, 'monthlyStats']);
 Route::apiResource('entries',EntryController::class);
-
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+
 });
